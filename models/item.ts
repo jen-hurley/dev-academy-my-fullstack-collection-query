@@ -26,3 +26,8 @@ export interface NewItem {
   priority: number
   price: number
 }
+
+export interface EditedItem {
+  id: number
+  updatedItem: UpdatedItem
+}

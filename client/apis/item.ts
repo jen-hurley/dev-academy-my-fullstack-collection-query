@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-import type { Item, NewItem } from '../../models/item'
+import type { Item, NewItem, UpdatedItem, EditedItem } from '../../models/item'
 
 export async function getAllItems() {
   const response = await request.get('/api/v1/wishlist')
@@ -19,19 +19,11 @@ export async function addItem({
     .send({ category, item, priority, price })
 }
 
-export async function updateItem(
-  id: Item['id'],
-  updatedCategory: Item['category'],
-  updatedItem: Item['item'],
-  updatedPriority: Item['priority'],
-  updatedPrice: Item['price']
-): Promise<void> {
-  await request.patch(`/api/v1/wishlist/${id}`).send({
-    category: updatedCategory,
-    item: updatedItem,
-    priority: updatedPriority,
-    price: updatedPrice,
-  })
+export async function updateItem({
+  id,
+  updatedItem,
+}: EditedItem): Promise<void> {
+  await request.patch(`/api/v1/wishlist/${id}`).send(updatedItem)
 }
 
 interface DeleteItem {

@@ -48,10 +48,12 @@ export default function WishlistItem({
     e.preventDefault()
     updateItemMutation.mutate({
       id,
-      updatedCategory: categoryText,
-      updatedItem: itemText,
-      updatedPriority: priorityText,
-      updatedPrice: priceText,
+      updatedItem: {
+        category: categoryText,
+        item: itemText,
+        priority: priorityText,
+        price: priceText,
+      },
     })
 
     setUpdating(false)
@@ -103,7 +105,7 @@ export default function WishlistItem({
           <div>
             {item} -- {category} -- {priority} -- $ {price}
             <button onClick={handleStartUpdatingClick}>Update Item</button>
-            <button onClick={handleDeleteClick}>Delete</button>
+            <button onClick={handleDeleteClick}>Delete Item</button>
           </div>
         </>
       )}

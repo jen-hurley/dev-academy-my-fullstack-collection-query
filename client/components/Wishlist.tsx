@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getAllItems } from '../apis/item'
 import AddItemForm from './AddItemForm'
+import WishlistItem from './WishlistItem'
 
 export default function Wishlist() {
   const {
@@ -31,6 +32,7 @@ export default function Wishlist() {
           </li>
         ))}
       </ul>
+
       <br />
       <AddItemForm />
     </div>
