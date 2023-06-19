@@ -32,7 +32,25 @@ export default function Wishlist() {
           </li>
         ))}
       </ul> */}
-      <ul>
+      <table>
+        <tr>
+          <th>Priority: </th>
+          <th>Category:</th>
+          <th>Item:</th>
+          <th>Price:</th>
+        </tr>
+        {wishListItems.map((item) => (
+          <>
+            <tr>
+              <td>{item.priority}</td>
+              <td>{item.category}</td>
+              <td>{item.item}</td>
+              <td>$ {item.price}</td>
+            </tr>
+          </>
+        ))}
+      </table>
+      {/* <ul>
         {wishListItems.map((item) => (
           <WishlistItem
             key={item.id}
@@ -43,7 +61,7 @@ export default function Wishlist() {
             price={item.price}
           />
         ))}
-      </ul>
+      </ul> */}
 
       <br />
     </div>
