@@ -50,18 +50,7 @@ export default function Wishlist() {
           </>
         ))}
       </table>
-      {/* <ul>
-        {wishListItems.map((item) => (
-          <WishlistItem
-            key={item.id}
-            id={item.id}
-            item={item.item}
-            category={item.category}
-            priority={item.priority}
-            price={item.price}
-          />
-        ))}
-      </ul> */}
+     
 
       <br />
     </div>

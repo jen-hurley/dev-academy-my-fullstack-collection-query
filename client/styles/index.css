@@ -6,3 +6,19 @@ body {
   padding: 20px;
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+table {
+  table-layout: auto;
+  width: auto;
+  border: 1px solid #383838
+}
+
+td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+th {
+  border-bottom: 2px solid #383838
+}
