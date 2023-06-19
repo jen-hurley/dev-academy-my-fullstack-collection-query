@@ -34,10 +34,10 @@ export default function Wishlist() {
       </ul> */}
       <table>
         <tr>
-          <th>Priority: </th>
-          <th>Category:</th>
-          <th>Item:</th>
-          <th>Price:</th>
+          <th>Priority </th>
+          <th>Category</th>
+          <th>Item</th>
+          <th>Price</th>
         </tr>
         {wishListItems.map((item) => (
           <>
@@ -50,7 +50,6 @@ export default function Wishlist() {
           </>
         ))}
       </table>
-     
 
       <br />
     </div>

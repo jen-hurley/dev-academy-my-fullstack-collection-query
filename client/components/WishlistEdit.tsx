@@ -1,6 +1,7 @@
 import WishlistItem from './WishlistItem'
 import { useQuery } from '@tanstack/react-query'
 import { getAllItems } from '../apis/item'
+import { Link } from 'react-router-dom'
 
 export default function WishListEdit() {
   const {
@@ -21,7 +22,7 @@ export default function WishListEdit() {
     return <div> Loading items...</div>
   }
   return (
-    <ul>
+    <>
       {wishListItems.map((item) => (
         <WishlistItem
           key={item.id}
@@ -32,6 +33,8 @@ export default function WishListEdit() {
           price={item.price}
         />
       ))}
-    </ul>
+
+      <Link to="/">Back to Wishlist</Link>
+    </>
   )
 }

@@ -72,7 +72,7 @@ export default function WishlistItem({
   return (
     <div>
       {updating ? (
-        <form onSubmit={handleUpdateSubmit}>
+        <form className="edit-form" onSubmit={handleUpdateSubmit}>
           <input
             type="text"
             value={itemText}
@@ -102,10 +102,26 @@ export default function WishlistItem({
         </form>
       ) : (
         <>
-          <div>
-            {item} -- {category} -- {priority} -- $ {price}
-            <button onClick={handleStartUpdatingClick}>Update Item</button>
-            <button onClick={handleDeleteClick}>Delete Item</button>
+          <div className="edit-list">
+            <table>
+              <tr>
+                <th>Item </th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Price</th>
+              </tr>
+              <tr>
+                <td>{item} </td>
+                <td>{category} </td> <td>{priority} </td>
+                <td>$ {price}</td>
+                <td>
+                  <button onClick={handleStartUpdatingClick}>
+                    Update Item
+                  </button>
+                  <button onClick={handleDeleteClick}>Delete Item</button>
+                </td>
+              </tr>
+            </table>
           </div>
         </>
       )}

@@ -45,7 +45,11 @@ export default function AddItemForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} aria-label="Add Wishlist Item Form">
+      <form
+        className="add-form"
+        onSubmit={handleSubmit}
+        aria-label="Add Wishlist Item Form"
+      >
         <label htmlFor="item">Item: </label>
         <br />
         <input
@@ -66,17 +70,17 @@ export default function AddItemForm() {
           required
         />
         <br />
+
         <label htmlFor="priority">Priority: </label>
         <br />
-        <input
-          id="priority"
-          onChange={handleChange}
-          value={form.priority}
-          name="priority"
-          required
-        />
+        <select name="priority" value={form.priority} id="priority">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+
         <br />
-        <label htmlFor="price">price: </label>
+        <label htmlFor="price">Price: </label>
         <br />
         <input
           id="price"
@@ -86,7 +90,7 @@ export default function AddItemForm() {
           required
         />
         <br />
-        <button> Add an item! </button>
+        <button className="add-button"> Add an item! </button>
       </form>
     </>
   )
