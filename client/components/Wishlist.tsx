@@ -3,7 +3,7 @@ import { getAllItems } from '../apis/item'
 
 export default function Wishlist() {
   const {
-    data: wishListItemList,
+    data: wishListItems,
     isError,
     isLoading,
   } = useQuery(['wishlist'], getAllItems)
@@ -22,16 +22,16 @@ export default function Wishlist() {
 
   return (
     <div>
-      <h2> Task List </h2>
-      {wishListItemList.map((item) => (
-        <WishlistItem
-          key={item.id}
-          id={item.id}
-          priority={item.priority}
-          item={item.item}
-          category={item.category}
-          price={item.price}
-        />
+      {wishListItems.map((item) => (
+        <li key={item.id}>
+          item: {item.item}
+          <br />
+          priority: {item.priority}
+          <br />
+          category: {item.category}
+          <br />
+          price: {item.price}
+        </li>
       ))}
     </div>
   )
