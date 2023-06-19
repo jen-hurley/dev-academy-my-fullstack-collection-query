@@ -8,7 +8,7 @@ function App() {
         <h1>WishList</h1>
       </header>
       <section className="main">
-        <Wishlist />
+        <Outlet />
       </section>
     </>
   )
