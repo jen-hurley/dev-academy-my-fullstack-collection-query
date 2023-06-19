@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { getAllItems } from '../apis/item'
+import AddItemForm from './AddItemForm'
 
 export default function Wishlist() {
   const {
@@ -22,17 +23,16 @@ export default function Wishlist() {
 
   return (
     <div>
-      {wishListItems.map((item) => (
-        <li key={item.id}>
-          item: {item.item}
-          <br />
-          priority: {item.priority}
-          <br />
-          category: {item.category}
-          <br />
-          price: {item.price}
-        </li>
-      ))}
+      <ul>
+        {wishListItems.map((item) => (
+          <li key={item.id}>
+            item: {item.item} | priority: {item.priority} | category:{' '}
+            {item.category} | price: {item.price} |
+          </li>
+        ))}
+      </ul>
+      <br />
+      <AddItemForm />
     </div>
   )
 }

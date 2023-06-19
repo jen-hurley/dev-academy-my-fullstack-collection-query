@@ -20,7 +20,7 @@ export interface UpdatedItem {
   price?: number
 }
 
-export interface AddItem {
+export interface NewItem {
   category: string
   item: string
   priority: number
