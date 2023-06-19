@@ -24,12 +24,24 @@ export default function Wishlist() {
 
   return (
     <div>
-      <ul>
+      {/* <ul>
         {wishListItems.map((item) => (
           <li key={item.id}>
             item: {item.item} | priority: {item.priority} | category:{' '}
             {item.category} | price: {item.price} |
           </li>
+        ))}
+      </ul> */}
+      <ul>
+        {wishListItems.map((item) => (
+          <WishlistItem
+            key={item.id}
+            id={item.id}
+            item={item.item}
+            category={item.category}
+            priority={item.priority}
+            price={item.priority}
+          />
         ))}
       </ul>
 
