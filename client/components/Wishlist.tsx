@@ -40,13 +40,12 @@ export default function Wishlist() {
             item={item.item}
             category={item.category}
             priority={item.priority}
-            price={item.priority}
+            price={item.price}
           />
         ))}
       </ul>
 
       <br />
-      <AddItemForm />
     </div>
   )
 }

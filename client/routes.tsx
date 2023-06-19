@@ -1,4 +1,8 @@
-import { Route, createRoutesFromElements } from 'react-router-dom'
+import {
+  Route,
+  createRoutesFromElements,
+  createBrowserRouter,
+} from 'react-router-dom'
 
 import App from './components/App'
 import Home from './components/Home'
@@ -10,3 +14,5 @@ export const routes = createRoutesFromElements(
     <Route path="/wishlist" element={<Wishlist />} />
   </Route>
 )
+
+export const router = createBrowserRouter(routes)

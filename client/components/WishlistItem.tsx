@@ -98,7 +98,9 @@ export default function WishlistItem({
             onChange={(e) => setPriceText(Number(e.target.value))}
           />
           <button type="submit">Save</button>
-          <button type="button" onClick={handleStopUpdatingClick}></button>
+          <button type="button" onClick={handleStopUpdatingClick}>
+            Cancel
+          </button>
         </form>
       ) : (
         <>

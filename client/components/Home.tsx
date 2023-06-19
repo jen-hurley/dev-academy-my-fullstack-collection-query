@@ -1,3 +1,4 @@
+import AddItemForm from './AddItemForm'
 import Wishlist from './Wishlist'
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <>
       <h1> home</h1>
       <Wishlist />
+      <AddItemForm />
     </>
   )
 }
