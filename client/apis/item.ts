@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-import type { Item, NewItem, UpdatedItem, EditedItem } from '../../models/item'
+import type { Item, NewItem, EditedItem } from '../../models/item'
 
 export async function getAllItems() {
   const response = await request.get('/api/v1/wishlist')
