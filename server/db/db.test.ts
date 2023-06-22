@@ -1,5 +1,7 @@
 import { beforeAll, beforeEach, afterAll, describe, it, expect } from 'vitest'
 
+import { getAllItems } from './db'
+
 const connection = require('./connection')
 
 const db = require('./db')
