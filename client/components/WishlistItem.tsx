@@ -75,23 +75,27 @@ export default function WishlistItem({
         <form className="edit-form" onSubmit={handleUpdateSubmit}>
           <input
             type="text"
+            aria-label="edit item"
             value={itemText}
             onChange={(e) => setItemText(e.target.value)}
           />
           <input
             type="text"
+            aria-label="edit category"
             value={categoryText}
             onChange={(e) => setCategoryText(e.target.value)}
           />
 
           <input
             type="text"
+            aria-label="edit prority"
             value={priorityText}
             onChange={(e) => setPriorityText(Number(e.target.value))}
           />
 
           <input
             type="text"
+            aria-label="edit price"
             value={priceText}
             onChange={(e) => setPriceText(Number(e.target.value))}
           />
