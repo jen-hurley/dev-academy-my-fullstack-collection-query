@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 
 import server from '../../server'
 
-import request from 'superagent'
+import request from 'supertest'
 
 import * as db from '../../db/db'
 
@@ -16,7 +16,17 @@ describe('GET /api/v1/wishlist', () => {
 
     const response = await request(server).get('/api/v1/wishlist')
 
-    expect(response.body).toMatchInlineSnapshot()
+    expect(response.body).toMatchInlineSnapshot(`
+      [
+        {
+          "category": "clothes",
+          "id": 1,
+          "item": "jumper",
+          "price": 20,
+          "priority": 1,
+        },
+      ]
+    `)
   })
 
   it('should show an error message when the db fails', async () => {
@@ -25,7 +35,7 @@ describe('GET /api/v1/wishlist', () => {
     )
     vi.spyOn(console, 'error').mockImplementation(() => {})
 
-    const response = (await request(server)).get('/api/v1/wishlist')
+    const response = await request(server).get('/api/v1/wishlist')
 
     expect(console.error).toHaveBeenCalledWith(
       new Error('SQLITE ERROR: There was an error')
