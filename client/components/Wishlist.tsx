@@ -31,14 +31,12 @@ export default function Wishlist() {
             <th>Price</th>
           </tr>
           {wishListItems.map((item) => (
-            <>
-              <tr key={item.id}>
-                <td>{item.priority}</td>
-                <td>{item.category}</td>
-                <td>{item.item}</td>
-                <td>$ {item.price}</td>
-              </tr>
-            </>
+            <tr key={item.id}>
+              <td>{item.priority}</td>
+              <td>{item.category}</td>
+              <td>{item.item}</td>
+              <td>$ {item.price}</td>
+            </tr>
           ))}
         </tbody>
       </table>
