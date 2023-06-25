@@ -1,7 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
 import { getAllItems } from '../apis/item'
-import AddItemForm from './AddItemForm'
-import WishlistItem from './WishlistItem'
 
 export default function Wishlist() {
   const {
@@ -24,17 +22,9 @@ export default function Wishlist() {
 
   return (
     <div>
-      {/* <ul>
-        {wishListItems.map((item) => (
-          <li key={item.id}>
-            item: {item.item} | priority: {item.priority} | category:{' '}
-            {item.category} | price: {item.price} |
-          </li>
-        ))}
-      </ul> */}
       <table>
         <tbody>
-          <tr>
+          <tr key="table-headers">
             <th>Priority </th>
             <th>Category</th>
             <th>Item</th>

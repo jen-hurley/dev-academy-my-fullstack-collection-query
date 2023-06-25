@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom'
-import Wishlist from './Wishlist'
 
 function App() {
   return (

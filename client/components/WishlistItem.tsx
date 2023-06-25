@@ -109,7 +109,7 @@ export default function WishlistItem({
           <div className="edit-list">
             <table>
               <tbody>
-                <tr>
+                <tr key="table-headers">
                   <th>Item </th>
                   <th>Category</th>
                   <th>Priority</th>
