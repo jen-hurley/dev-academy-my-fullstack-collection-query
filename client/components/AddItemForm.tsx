@@ -31,7 +31,9 @@ export default function AddItemForm() {
     return <div> Adding your item to the list! </div>
   }
 
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+  function handleChange(
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+  ) {
     const { name, value } = e.target
     const newList = { ...form, [name]: value }
     setForm(newList)
@@ -73,7 +75,12 @@ export default function AddItemForm() {
 
         <label htmlFor="priority">Priority: </label>
         <br />
-        <select name="priority" value={form.priority} id="priority">
+        <select
+          name="priority"
+          value={form.priority}
+          id="priority"
+          onChange={handleChange}
+        >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
