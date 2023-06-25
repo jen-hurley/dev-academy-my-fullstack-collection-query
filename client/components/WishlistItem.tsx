@@ -108,23 +108,25 @@ export default function WishlistItem({
         <>
           <div className="edit-list">
             <table>
-              <tr>
-                <th>Item </th>
-                <th>Category</th>
-                <th>Priority</th>
-                <th>Price</th>
-              </tr>
-              <tr>
-                <td>{item} </td>
-                <td>{category} </td> <td>{priority} </td>
-                <td>$ {price}</td>
-                <td>
-                  <button onClick={handleStartUpdatingClick}>
-                    Update Item
-                  </button>
-                  <button onClick={handleDeleteClick}>Delete Item</button>
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Item </th>
+                  <th>Category</th>
+                  <th>Priority</th>
+                  <th>Price</th>
+                </tr>
+                <tr key={id}>
+                  <td>{item} </td>
+                  <td>{category} </td> <td>{priority} </td>
+                  <td>$ {price}</td>
+                  <td>
+                    <button onClick={handleStartUpdatingClick}>
+                      Update Item
+                    </button>
+                    <button onClick={handleDeleteClick}>Delete Item</button>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </>
