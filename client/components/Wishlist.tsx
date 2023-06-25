@@ -41,7 +41,7 @@ export default function Wishlist() {
         </tr>
         {wishListItems.map((item) => (
           <>
-            <tr>
+            <tr key={item.id}>
               <td>{item.priority}</td>
               <td>{item.category}</td>
               <td>{item.item}</td>
